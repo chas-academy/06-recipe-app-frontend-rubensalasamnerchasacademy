@@ -1,3 +1,31 @@
-<p>
-  recipeslist works!
-</p>
+
+<select [(ngModel)]="healthLabel">
+  <option value="Alcohol-Free">Alcohol-Free</option>
+  <option value="low-carb">low-carb</option>
+  <option value="vegetarian">vegetarian</option>
+  <option value="pescatarian">pescatarian</option>
+  <option value="paleo">paleo</option>
+  <option value="low-sugar">low-sugar</option>
+  <option value="sugar-conscious">sugar-conscious</option>
+</select>
+<input  type="text" name="testing"[(ngModel)]="searchinput" >
+<button routerLink="/recipeslist" (click)="handleRecipeSearchClick()"  >Get Recipe!</button>
+
+
+<div>
+<div *ngIf="recipes" id="test">
+<div class="container">
+      
+      <div class="card col-md-auto" *ngFor="let item of recipes">
+      <img class="card-img-top" src="{{item.image}}" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title"> {{ item.label }}</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <a [routerLink]="['/recipesdetail', item.label]" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+  
+   
+ 
+</div>
+</div>
