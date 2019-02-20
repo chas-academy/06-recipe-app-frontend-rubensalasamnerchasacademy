@@ -30,6 +30,11 @@ export class RecipesearchService {
    return this.http.get<any>(this.url + 'search?q=' + results + '&app_id=' + this.appId + '&app_key=' + this.appKey + '&from=0&to=10&health=alcohol-free&' + healthLabel)
  }
 
+ getRecipe(id): Observable<any> {
+   
+  return this.http.get(this.url + 'search?q=' + id + '&app_id=' + this.appId + '&app_key=' + this.appKey + '&from=0&to=1')//.pipe(
+}
+
  
 }
 
