@@ -1,9 +1,16 @@
+
+
 <div *ngIf="recipe">
   <div style="background-image: url'({{recipe[0].image}})'"class="jumbotron jumbotron-fluid">
   <div class="container">
     <h1 class="display-4">{{recipe[0].label}}</h1>
     <p>This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
   </div>
+ 
+  <button (click)="testing()">Get saved Recipes</button>
+  <a routerLink="/profile" class="btn btn-primary">See my recipes</a>
+  <!-- <button (click)="saveRecipe(recipe[0].label)">Save recipe backend</button> -->
+  <button *ngIf="loggedIn" (click)="saveRecipe(recipe[0])">Add recipe!</button>
   
 </div>
 

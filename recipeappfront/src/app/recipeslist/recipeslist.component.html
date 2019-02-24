@@ -1,31 +1,98 @@
-
-<select [(ngModel)]="healthLabel">
-  <option value="Alcohol-Free">Alcohol-Free</option>
-  <option value="low-carb">low-carb</option>
-  <option value="vegetarian">vegetarian</option>
-  <option value="pescatarian">pescatarian</option>
-  <option value="paleo">paleo</option>
-  <option value="low-sugar">low-sugar</option>
-  <option value="sugar-conscious">sugar-conscious</option>
-</select>
-<input  type="text" name="testing"[(ngModel)]="searchinput" >
-<button routerLink="/recipeslist" (click)="handleRecipeSearchClick()"  >Get Recipe!</button>
-
-
-<div>
-<div *ngIf="recipes" id="test">
-<div class="container">
+<section class="jumbotron text-center test">
+  <div class="container">
       
-      <div class="card col-md-auto" *ngFor="let item of recipes">
-      <img class="card-img-top" src="{{item.image}}" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title"> {{ item.label }}</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a [routerLink]="['/recipesdetail', item.label]" class="btn btn-primary">Go somewhere</a>
+    <h1 class="jumbotron-heading display-3">Mmm Yummy in my Tummy</h1>
+    <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.</p>
+    <p>
+      <input  type="text" name="testing"[(ngModel)]="searchinput" placeholder="It's cookin'" >
+      <button class="btn btn-primary my-2" routerLink="/recipeslist" (click)="handleRecipeSearchClick()"  >Get Recipe!</button>
+    </p>
+  </div>
+</section>
+
+
+<!-- 
+<div class="test">
+<div class="container ">
+  <h1 class="">When in doubt <br> Follow your nose</h1>
+  <button routerLink="/profile" (click)="testingrecipes()">My recipes!</button>
+
+
+
+  <label for="highprotein">High-Protein</label>
+  <input type="checkbox" ng-model="checkbox1" id="highprotein" (click)="myFunction">
+    
+  
+
+
+    <select [(ngModel)]="healthLabel">
+        <option value="Alcohol-Free">Alcohol-Free</option>
+        <option value="low-carb">low-carb</option>
+        <option value="vegetarian">vegetarian</option>
+        <option value="pescatarian">pescatarian</option>
+        <option value="paleo">paleo</option>
+        <option value="low-sugar">low-sugar</option>
+        <option value="sugar-conscious">sugar-conscious</option>
+    </select>
+  <input  type="text" name="testing"[(ngModel)]="searchinput" >
+  <button routerLink="/recipeslist" (click)="handleRecipeSearchClick()"  >Get Recipe!</button>
+
+
+  <div>
+</div>
+</div>
+-->
+
+
+
+<!-- <main role="main">
+
+  <section class="jumbotron text-center">
+    <div class="container">
+      <h1 class="jumbotron-heading">Album example</h1>
+      <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.</p>
+      <p>
+        <a href="#" class="btn btn-primary my-2">Main call to action</a>
+        <a href="#" class="btn btn-secondary my-2">Secondary action</a>
+      </p>
+    </div>
+  </section>
+<div class="wrap"></div>
+  <div *ngIf="recipes" id="test" class="album py-5 bg-light">
+    <div class="container">
+
+      <div class="row">
+        <div class="col-md-4">
+          <div class="wrapper">
+            
+        </div>
+        
       </div>
     </div>
-  
-   
- 
-</div>
-</div>
+  </div>
+
+</main> -->
+
+
+
+<div class="wrap">
+<div class="wrapper">
+    <div class="card mb-10 shadow-sm"*ngFor="let item of recipes">
+        
+        <img class="img-fluid" src="{{item.image}}">
+                <div class="card-body">
+                  <p class="card-text white">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      
+                      <button [routerLink]="['/recipesdetail', item.label]" type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                      <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                      <button class="btn peach-gradient btn-rounded waves-effect waves-light">Peach</button>
+                    </div>
+                    <small class="text-muted">9 mins</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+  </div>
+
