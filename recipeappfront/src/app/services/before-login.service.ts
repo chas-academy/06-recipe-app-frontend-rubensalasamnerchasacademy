@@ -6,7 +6,7 @@ import { TokenService } from './token.service';
 @Injectable({
   providedIn: 'root'
 })
-export class BeforeLoginService {
+export class BeforeLoginService implements CanActivate {
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | Observable<boolean> | Promise<boolean> {
     return !this.token.loggedIn();
@@ -16,4 +16,3 @@ export class BeforeLoginService {
     private token: TokenService
   ) { }
 }
-

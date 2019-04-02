@@ -18,4 +18,3 @@ export class AuthService {
     private token: TokenService
   ) { }
 }
-
