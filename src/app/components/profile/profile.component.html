@@ -1,0 +1,25 @@
+<div class="wrap">
+  <h1 class="text-center">Profile Page</h1>
+  <div class="wrapper">
+    <div class="card mb-10 shadow-sm" *ngFor="let item of recipes">
+      <img class="img-fluid" src="{{ item.img }}" />
+      <div class="card-body">
+        <p class="card">
+          {{ item.title }}
+        </p>
+        <div class="d-flex justify-content-between align-items-center">
+          <div class="btn-group">
+            <button
+              [routerLink]="['/recipesdetail', item.title]"
+              type="button"
+              class="btn btn-primary"
+            >
+              View
+            </button>
+            <button (click)="deleteRecipe(item.id)">Delete Recipe</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

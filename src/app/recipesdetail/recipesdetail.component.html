@@ -1,0 +1,18 @@
+<div class="contain">
+  <div *ngIf="recipe">
+    <div class="detail" style="background-image: url'({{ recipe[0].image }})'">
+      <div class="container text-center">
+        <img alt="Image of {{ recipe[0].label }}" src="{{ recipe[0].image }}" />
+        <h1 class="display-4">{{ recipe[0].label }}</h1>
+        <h3>Ingredients:</h3>
+        <div *ngFor="let item of recipe[0].ingredientLines">
+          <p>{{ item }}</p>
+        </div>
+        <a routerLink="/profile" class="btn btn-primary">See my recipes</a>
+        <button *ngIf="loggedIn" (click)="saveRecipe(recipe[0])">
+          Add recipe!
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
